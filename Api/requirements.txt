@@ -1,7 +1,6 @@
-fastapi==0.116.1
-uvicorn==0.35.0
-SQLAlchemy==2.0.43
-google-cloud==0.34.0
-python-multipart==0.0.20
-Jinja2==3.1.6
-email-validator==2.2.0
+fastapi==0.111.0
+sqlalchemy==2.0.22
+pymysql==1.1.1
+python-dotenv==1.0.1
+pydantic==2.6.0
+uvicorn==0.26.1
