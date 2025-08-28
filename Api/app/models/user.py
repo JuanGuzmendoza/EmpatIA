@@ -1,17 +1,19 @@
-from sqlalchemy import Column, Integer, String, Text
+from sqlalchemy import Column, Integer, String, Text, DateTime
 from sqlalchemy.orm import declarative_base
+from datetime import datetime
 
 Base = declarative_base()
 
 class User(Base):
     __tablename__ = "users"
 
-    id = Column(Integer, primary_key=True, index=True)  # PK
-    name = Column(String(50), nullable=False)  # nombre (short name)
-    identification = Column(String(20), unique=True, index=True, nullable=False)  # identificación
-    full_name = Column(String(100), nullable=False)  # nombre_completo
-    age = Column(Integer, nullable=False)  # edad
-    address = Column(String(200), nullable=True)  # dirección
-    gender = Column(String(10), nullable=True)  # género
-    psychological_history = Column(Text, nullable=True)  # historial_psicologico
-    risk_status = Column(String(50), nullable=True)  # estado_de_riesgo
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    full_name = Column(String(255), nullable=False)
+    username = Column(String(255), unique=True, nullable=False)
+    age = Column(Integer, nullable=False)
+    email = Column(String(255), unique=True, nullable=False)
+    phone = Column(Integer, nullable=True)
+    address = Column(String(255), nullable=True)
+    user_profile = Column(String(255), nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    update_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
