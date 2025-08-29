@@ -5,10 +5,10 @@ from models.user import User
 from schemas.user import UserBase, UserCreate, UserResponse as UserSchema
 from typing import List
 
-user = APIRouter()
+user_get = APIRouter()
 
 
-@user.get(
+@user_get.get(
     "/users",
     tags=["Users"],
     response_model=List[UserSchema],

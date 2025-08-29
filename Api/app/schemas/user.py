@@ -12,8 +12,8 @@ class UserBase(BaseModel):
     id_genre: int
     country: str
     city: str
-    phone: int
-    emergency_contact: Optional[int] = None
+    phone: str
+    emergency_contact: Optional[str] = None
     address: Optional[str] = None
     user_profile: Optional[str] = None
 
