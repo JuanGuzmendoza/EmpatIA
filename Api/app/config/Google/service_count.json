@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "empatia-469620",
+  "private_key_id": "0107c2c8d89ded673651faecaf5ab64ac1484bf2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC+tKPiAhCyBxH9\nu553Mymhox3FdWT9ixA4ezVK4UTTwKXrkmk1jw8RSPHN8+xSYKUYC3EyBs/FkRNZ\n/HvZYqycOcndCDxS0Qhbfi7TIIyMfaOSz9SH0W8qoGiYgNbPhkOONPkGvou14149\nCJf1AR3mLYlbFU/H4Q9EqB91tjVYcf0TEI6O4D38sDdqlr9HVByFFnDIp+Twysqa\ntvKrBIY4vHURJ1drmLvTEiRK/2vlMk/CYmKFDzB2ZVTY2RudzkNJ5iFc04eDdVRJ\nQr2hPM1nyC4rpjWsv/idh1iOXdUUWLvWzsVScvJloSYnhsAt9ljEA000lZBjbDHo\nIq0z83mRAgMBAAECggEAHNTKgfy18XRIMAgRaQv/G0TB13xsDDjd9uwJnox4D1ts\nujSkW0iJip9wjyZ1b+7UhtIUBvAosUHBnzUgtDjKx8Ok1RnNpOedT9e/1INzPDoy\nZJuvEemD2PnvVj8EOtOdmv4/N9nO3WzGbovCDXRhxM7VmUObkChiWorgVrd5USmH\nHJUj+PXl++uMfLGGSheUzkHiGxWAgbD25tF3+sTtgU0a8aSo/DGt4cvI7xtdEtJ/\nvHUs+w5DUUXv+tu17Fx4q507iiHx0oyw6u6OkArKXIxh7KebaQ+5Lr/mU3BFVTrY\n2/E3Rf5sZMNclC0pvxYy6EJArGfuUwhx59R8s8lqkQKBgQD9eHlvo4U6b4y3fkZZ\nWrhZzSFgCQXbg4fxCWGXRX/JtWqWfeBcpBTPK+L36NqgEFIiNflkVip/JZOO73iP\nasdVhUrf4IiUxdytB/j4mqgEJFobRIh7+OUuEAUVFvrm/qINkYvXbEeibEila+J+\nJig+dn9pHhFXHwFtfodfMyl7GwKBgQDAm9LyUiQpbyCYaTaWMvEoKV31Boqwq1ZD\ntvGNGib9dopK61enj1O1lKQzBsYfSFRhqgxaeDBIvJT4bfv3lDfj8oxlKG/YegsT\nk5GpxvxIF4nPsq18FpO7MWUxtQURSeavVdjpX0Ck8wwx/dgxl1xdhUtv9M76qdYF\nacBk1idcwwKBgG87Z08um1DBkycTKxwbS7tc4cCbNQ7X8dg9Ha6cuS9zhYr1Qnhl\nKRyhTcEtVoPXpbONrBv0FEIn41FelbGaUk+dZvZIOqfPDMCCNygh9omaylAdCygc\nWbaVISXYJ9Mm+0apEI1A307P5jFx3rstU4vVxKQEpedtm9rJI+8LLLDxAoGAZhbx\n47D4K+IUI9S4szoDKudqPsKd5nCag7/HHqQ7AGPBf15oko7crsU/lzBC+TfMSgvp\nClbkONmEGH2rbRnp2e+ozMF3LwXZMyInthabh9a6HBW38KrC2Riga41oRzaliE/3\nbhMn34ZX83N6EScKNSO+zXOz9ZbpsurPqGL+cCMCgYEA31XiYCRsoaueXf2cTj/E\nnKc1rQX092sd4cFOmtEba39LfkAVCQzaBj5CVUhYDONhv/mkxxrpjunpByXbcD4B\naGoklPBncejmQkeEHLijkhv1TqnaoUXBmWSvwTayn0D2uLYrjZGbW4+ltc2SfBOK\nnqyZAgtcK+ERJDEqd3DSNEY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "back-api@empatia-469620.iam.gserviceaccount.com",
+  "client_id": "110944863317788907668",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/back-api%40empatia-469620.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
