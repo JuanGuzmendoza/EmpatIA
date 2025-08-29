@@ -2,20 +2,32 @@ from pydantic import BaseModel, EmailStr
 from typing import Optional
 from datetime import datetime
 
-class User(BaseModel):
-    id_user: Optional[int] = None                  # AUTO_INCREMENT
-    full_name: str                                 # NOT NULL
-    username: Optional[str] = None                 # UNIQUE pero puede ser NULL
-    email: EmailStr                                # NOT NULL + formato email
-    password_user: str                             # NOT NULL
-    national_id: str                               # NOT NULL
-    age: int                                       # NOT NULL
-    id_genre: int                                  # FK, NOT NULL
-    country: str                                   # NOT NULL
-    city: str                                      # NOT NULL
-    phone: int                                     # NOT NULL
-    emergency_contact: Optional[int] = None        # NULL permitido
-    address: Optional[str] = None                  # NULL permitido
-    user_profile: Optional[str] = None             # UNIQUE pero puede ser NULL
-    created_at: Optional[datetime] = None          # generado en DB
-    updated_at: Optional[datetime] = None          # generado/actualizado en DB
+# Schema base (atributos comunes)
+class UserBase(BaseModel):
+    full_name: str
+    username: Optional[str] = None
+    email: EmailStr
+    national_id: str
+    age: int
+    id_genre: int
+    country: str
+    city: str
+    phone: int
+    emergency_contact: Optional[int] = None
+    address: Optional[str] = None
+    user_profile: Optional[str] = None
+
+
+# Schema para creación (incluye contraseña)
+class UserCreate(UserBase):
+    password_user: str
+
+
+# Schema de respuesta (lo que se retorna al cliente)
+class UserResponse(UserBase):
+    id_user: int
+    created_at: datetime
+    updated_at: datetime
+
+    class Config:
+        from_attributes = True  # permite convertir desde modelos ORM
