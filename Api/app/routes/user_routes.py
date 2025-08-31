@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from Api.app.config.db.db import get_db  # la dependencia de db.py
+from config.db.db import get_db
 from models.user import User
 from schemas.user import User as UserSchema
 from typing import List
