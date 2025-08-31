@@ -1,8 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from datetime import datetime
-from config.db import Base
-from models.genre import Genre
+from config.db.db import Base  # Importa el Base centralizado
 
 class User(Base):
     __tablename__ = "users"
@@ -24,5 +23,5 @@ class User(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-    # Relación opcional con la tabla genres
+    # Relación con la tabla Genre
     genre = relationship("Genre", back_populates="users")
