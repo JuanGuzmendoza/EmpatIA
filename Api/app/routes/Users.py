@@ -9,7 +9,7 @@ user = APIRouter()
 
 
 @user.get(
-    "/users",
+    "/getAllUsers",
     tags=["Users"],
     response_model=List[UserSchema],
     description="Get a list of all registered users"
