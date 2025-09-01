@@ -81,7 +81,7 @@ def generar_impresion_clinica(usuario_json):
 
     resultado = ""
     stream = client.models.generate_content_stream(
-        model="gemini-2.5-pro",
+        model="gemini-2.5-flash",
         contents=contents,
         config=config
     )
