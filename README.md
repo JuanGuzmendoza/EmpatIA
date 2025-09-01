@@ -1,51 +1,54 @@
 # EmpatIA
 
 ## Descripción
-EmpatIA es un proyecto de [breve descripción del proyecto]. En esta sección, se incluyen los componentes de la API y otros aspectos del proyecto.
+
+EmpatIA es un proyecto de [breve descripción del proyecto]. Este proyecto incluye una API desarrollada con FastAPI y componentes de IA para [describir la funcionalidad principal].
 
 Este repositorio tiene dos carpetas principales:
 
-- **`api/`**: Contiene la API que está siendo desarrollada con FastAPI.
-- **`proyecto/`**: Contiene la lógica y componentes generales del proyecto.
+*   **Api/**: Contiene la API desarrollada con FastAPI.
+*   **proyecto/**: Contiene la lógica y componentes generales del proyecto.
 
 ## Requisitos
+
 Antes de ejecutar el proyecto, asegúrate de tener instalado:
 
-- Python 3.12 o superior
-- pip (gestor de paquetes de Python)
+*   Python 3.12 o superior
+*   pip (gestor de paquetes de Python)
 
 ## Instrucciones de uso
 
-### Instalación de dependencias
+### 1️⃣ Crear un entorno virtual
 
-#### Paso 1: Crear un entorno virtual
+Se recomienda crear el entorno virtual en la raíz del proyecto, donde se encuentra este README.
 
-Para trabajar con el proyecto, es **recomendado usar un entorno virtual** para evitar conflictos con otras dependencias del sistema. Para crear uno:
+### Crear un entorno virtual
 
-1. Abre una terminal en la carpeta del proyecto.
-2. Crea un entorno virtual:
+codeBash
 
-    ```bash
-    python3 -m venv venv
-    ```
+`   python3 -m venv venv   `
 
-3. Activa el entorno virtual:
-   
-   - En **Ubuntu/macOS**:
+*   **Activar el entorno virtual:**
+    
+    *   codeBashsource venv/bin/activate
+        
+    *   codePowershellvenv\\Scripts\\activate
+        
 
-     ```bash
-     source venv/bin/activate
-     ```
+### 2️⃣ Instalar dependencias
 
-   - En **Windows**:
+Con el entorno virtual activado, ve a la carpeta Api/ y ejecuta:
 
-     ```bash
-     venv\Scripts\activate
-     ```
+codeBash
 
-#### Paso 2: Instalar las dependencias
+`   cd Api  pip install -r requirements.txt   `
 
-Con el entorno virtual activado, instala todas las dependencias necesarias para el proyecto:
+### 3️⃣ Levantar el servidor
 
-```bash
-pip install -r requirements.txt
+Dentro de la carpeta Api/, ejecuta uvicorn para iniciar la API:
+
+*   codeBashuvicorn main:app --reload --host 0.0.0.0 --port 8000
+
+    
+
+Después de esto, tu API debería estar corriendo en: http://127.0.0.1:8000

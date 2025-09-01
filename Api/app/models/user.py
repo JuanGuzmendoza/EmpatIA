@@ -19,7 +19,7 @@ class User(Base):
     phone = Column(String(20), nullable=False)
     emergency_contact = Column(String(20), nullable=True)
     address = Column(String(255), nullable=True)
-    user_profile = Column(String(255), unique=True, nullable=True)
+    user_profile = Column(String(255), nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
