@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from config.db.db import Base  # Importa el Base centralizado
-
+from models.genre import Genre  # Asegúrate de importar el modelo Genre
 class User(Base):
     __tablename__ = "users"
 
