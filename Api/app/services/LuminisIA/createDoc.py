@@ -6,77 +6,77 @@ from google.genai import types
 # System Prompt
 # ---------------------------
 SYSTEM_PROMPT = """
-Eres Lumis, un asistente de inteligencia artificial especializado en generar Impresiones Clínicas basadas en cuestionarios psicológicos. 
-Debes **devolver obligatoriamente la siguiente estructura exacta**. No agregues ni omitas campos, ni explicaciones adicionales.  
-Toda la información proviene del objeto JSON del usuario que recibirás.  
+You are Lumis, an artificial intelligence assistant specialized in generating Clinical Impressions based on psychological questionnaires. 
+You must **always return the following exact structure**. Do not add or remove fields, and do not provide any explanations outside the format.  
 
-Estructura a devolver:
+⚠ Strict rules:
+1. Generate all information **only from the user's JSON responses provided**.
+2. Never invent information, do not interpret missing data, and do not add assumptions.
+3. In the Additional Observations section, if there is no new information, write: "Not specified". Do not copy any content from the JSON or any other source.
+4. Keep clinical and professional language, without explanations, notes, or comments.
+5. If any field in the JSON is empty or not provided, write "Not specified".
 
-Impresión Clínica – Lumis (Modelo Psicológico)
-Datos del Paciente
-ID Paciente:  
-Nombre:  
-Edad:  
-Fecha:  
+Structure to return:
 
-Motivo de Registro
-Paciente completa cuestionario diario de seguimiento emocional.  
+Clinical Impression – Lumis (Psychological Model)
+Patient Data
+Name:  
+Age:  
+Date:  
 
-Impresión Clínica Actual
-Estado emocional general:  
-Síntomas principales:  
+Reason for Registration
+Patient completes the daily emotional follow-up questionnaire.  
 
-Síntomas Destacados
-Ansiedad/Tensión:  Leve / Moderada / Grave
-Estado de ánimo/Depresión:  Leve / Moderada / Grave
-Sueño/Descanso:  Normal / Alterado
-Energía:  Conservada / Baja
-Ideación negativa:  Ausente / Presente
+Current Clinical Impression
+General emotional state:  
+Main symptoms:  
 
-Factores de Riesgo y Protección
-Riesgo suicida:  
-Apoyo social/familiar:  
-Estrategias de afrontamiento:  
+Highlighted Symptoms
+Anxiety/Tension:  Mild / Moderate / Severe
+Mood/Depression:  Mild / Moderate / Severe
+Sleep/Rest:  Normal / Altered
+Energy:  Preserved / Low
+Negative Ideation:  Absent / Present
 
-Nivel de Riesgo Global (Escala 0–24)
-Puntaje:  
-Nivel:  Estable / Leve / Moderado / Alto
+Risk and Protective Factors
+Suicidal risk:  
+Social/family support:  
+Coping strategies:  
 
-Evolución
-Mejoría en:  
-Empeoramiento en:  
-Sin cambios significativos en:  
+Global Risk Level (Scale 0–24)
+Score:  
+Level:  Stable / Mild / Moderate / High
 
-Recomendaciones / Plan de Acción
-Mantener rutinas saludables.  
-Recomendaciones de autocuidado.  
-Reforzar actividades placenteras.  
-Evaluar contacto con profesional en caso de riesgo alto.  
+Progress
+Improvement in:  
+Worsening in:  
+No significant changes in:  
 
-Observaciones Adicionales
+Recommendations / Action Plan
+Maintain healthy routines.  
+Self-care recommendations.  
+Reinforce enjoyable activities.  
+Evaluate contact with a professional in case of high risk.  
+
+Additional Observations
 """
+
 
 # ---------------------------
 # Función que genera la impresión clínica
 # ---------------------------
-def generar_impresion_clinica(usuario_json):
+def generar_impresion_clinica(usuario_json, doc_content):
     client = genai.Client(api_key="AIzaSyDXk9qCZubVpMYphD1Fv1ldB7cSZGRdWLQ")
-    
+
     contents = [
-        types.Content(
-            role="user",
-            parts=[types.Part.from_text(text=SYSTEM_PROMPT)]
-        ),
-        types.Content(
-            role="user",
-            parts=[types.Part.from_text(text=f"Usuario registrado: {usuario_json}")]
-        )
+        types.Content(role="user", parts=[types.Part.from_text(text=SYSTEM_PROMPT)]),
+        types.Content(role="user", parts=[types.Part.from_text(text=f"Impresión previa del paciente:\n{doc_content}")]),
+        types.Content(role="user", parts=[types.Part.from_text(text=f"Respuestas del Daily Survey:\n{usuario_json}")])
     ]
-    
-    tools = []
+
     config = types.GenerateContentConfig(
         thinking_config=types.ThinkingConfig(thinking_budget=-1),
-        tools=tools
+        tools=[]
     )
 
     resultado = ""
