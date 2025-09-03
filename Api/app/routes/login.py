@@ -35,7 +35,8 @@ async def registro_completo(payload: RegistroCompleto, db: Session = Depends(get
     try:
         doc_response = createDocIaFirstTime(
             doc_number=int(user_data.get("national_id")),
-            inscripcion_data=inscripcion_data
+            inscripcion_data=inscripcion_data,
+            user_data=user_data   # 👈 se lo pasamos aquí
         )
         user_data["user_profile"] = doc_response["documentId"]
     except Exception as e:

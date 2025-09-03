@@ -2,53 +2,56 @@
 
 ## Descripción
 
-EmpatIA es un proyecto de [breve descripción del proyecto]. Este proyecto incluye una API desarrollada con FastAPI y componentes de IA para [describir la funcionalidad principal].
+EmpatIA es un proyecto que integra una API desarrollada con FastAPI y componentes de inteligencia artificial para el análisis y gestión de documentos y encuestas. El objetivo principal es facilitar la interacción y procesamiento de datos mediante IA.
 
-Este repositorio tiene dos carpetas principales:
+## Estructura del repositorio
 
-*   **Api/**: Contiene la API desarrollada con FastAPI.
-*   **proyecto/**: Contiene la lógica y componentes generales del proyecto.
+- **Api/**: Contiene la API principal desarrollada con FastAPI, incluyendo rutas, servicios y configuración.
+- **proyecto/**: Incluye la lógica y componentes generales del proyecto fuera de la API.
+- **docs/**: Documentación y archivos relacionados con la base de datos.
 
 ## Requisitos
 
-Antes de ejecutar el proyecto, asegúrate de tener instalado:
-
-*   Python 3.12 o superior
-*   pip (gestor de paquetes de Python)
+- **Python**: 3.12
+- **pip**: Gestor de paquetes de Python
 
 ## Instrucciones de uso
 
 ### 1️⃣ Crear un entorno virtual
 
-Se recomienda crear el entorno virtual en la raíz del proyecto, donde se encuentra este README.
+Ubícate en la raíz del proyecto (donde está este README).
 
-### Crear un entorno virtual
+**Windows:**
+```powershell
+python -m venv venv
+venv\Scripts\activate
+```
 
-codeBash
-
-`   python3 -m venv venv   `
-
-*   **Activar el entorno virtual:**
-    
-    *   codeBashsource venv/bin/activate
-        
-    *   codePowershellvenv\\Scripts\\activate
-        
+**Ubuntu/Linux/MacOS:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
 ### 2️⃣ Instalar dependencias
 
-Con el entorno virtual activado, ve a la carpeta Api/ y ejecuta:
+Con el entorno virtual activado, entra a la carpeta `Api` y ejecuta:
 
-codeBash
-
-`   cd Api  pip install -r requirements.txt   `
+```bash
+cd Api
+pip install -r requirements.txt
+```
 
 ### 3️⃣ Levantar el servidor
 
-Dentro de la carpeta Api/, ejecuta uvicorn para iniciar la API:
+Dentro de la carpeta `Api`, ejecuta el siguiente comando para iniciar la API con Uvicorn:
 
-*   codeBashuvicorn main:app --reload --host 0.0.0.0 --port 8000
+```bash
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
 
-    
+La API estará disponible en: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
-Después de esto, tu API debería estar corriendo en: http://127.0.0.1:8000
+---
+
+Si tienes dudas o problemas, revisa la documentación en la carpeta `docs/` o contacta al equipo de desarrollo.

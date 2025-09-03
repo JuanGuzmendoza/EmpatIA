@@ -4,7 +4,7 @@ from services.LuminisIA.createDoc import generar_impresion_clinica
 
 ROOT_FOLDER_ID = "1RWq3RMGJyckA1T0ggq8dMH4k_sFdJDdv"
 
-def createDocIaFirstTime(doc_number: int, inscripcion_data: dict):
+def createDocIaFirstTime(doc_number: int, inscripcion_data: dict, user_data: dict):
     title = f"{doc_number}"
     doc = docs_service.documents().create(body={"title": title}).execute()
     doc_id = doc.get("documentId")
@@ -18,8 +18,8 @@ def createDocIaFirstTime(doc_number: int, inscripcion_data: dict):
             fields="id, parents"
         ).execute()
 
-        impresion_clinica = generar_impresion_clinica(inscripcion_data)
-
+        # Aquí puedes decidir qué hacer con user_data
+        impresion_clinica = generar_impresion_clinica(inscripcion_data, user_data)
         requests = [{"insertText": {"location": {"index": 1}, "text": impresion_clinica}}]
         docs_service.documents().batchUpdate(documentId=doc_id, body={"requests": requests}).execute()
 
