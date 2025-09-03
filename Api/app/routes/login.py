@@ -16,10 +16,7 @@ def login_user(email: str, password: str, db: Session = Depends(get_db)):
     user = db.query(User).filter(User.email == email).first()
     if not user or user.password_user != password:
         raise HTTPException(status_code=401, detail="Credenciales inválidas")
-    return {
-        "message": "Login exitoso",
-        "user_id": user.id_user
-    }
+    return user
     
 
 @login.post("/registerUser")
