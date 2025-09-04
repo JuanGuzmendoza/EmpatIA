@@ -12,42 +12,26 @@ EmpatIA es un proyecto que integra una API desarrollada con FastAPI y componente
 
 ## Requisitos
 
-- **Python**: 3.12
+- **Python**: 3.12 instalado en Windows
 - **pip**: Gestor de paquetes de Python
 
 ## Instrucciones de uso
 
-### 1️⃣ Crear un entorno virtual
+### 1️⃣ Instalar dependencias
+Ubícate en la carpeta `Api` y ejecuta:
 
-Ubícate en la raíz del proyecto (donde está este README).
-
-**Windows:**
 ```powershell
-python -m venv venv
-venv\Scripts\activate
-```
-
-**Ubuntu/Linux/MacOS:**
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-### 2️⃣ Instalar dependencias
-
-Con el entorno virtual activado, entra a la carpeta `Api` y ejecuta:
-
-```bash
 cd Api
-pip install -r requirements.txt
+py -3.12 -m pip install -r requirements.txt
 ```
 
-### 3️⃣ Levantar el servidor
+### 2️⃣ Levantar el servidor
 
-Dentro de la carpeta `Api`, ejecuta el siguiente comando para iniciar la API con Uvicorn:
+Luego, entra en la carpeta app (que está dentro de Api) y ejecuta:
 
 ```bash
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+cd app
+py -3.12 -m uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 La API estará disponible en: [http://127.0.0.1:8000](http://127.0.0.1:8000)
